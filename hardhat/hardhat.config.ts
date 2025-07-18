@@ -1,8 +1,11 @@
 import { HardhatUserConfig } from "hardhat/config";
 import "@nomicfoundation/hardhat-toolbox";
+import "hardhat-deploy";
+import * as dotenv from "dotenv";
+dotenv.config();
 
 const config: HardhatUserConfig = {
-  solidity: "0.8.19",
+  solidity: "0.8.20",
   defaultNetwork: "hardhat",
   namedAccounts: {
     deployer: {
@@ -27,6 +30,12 @@ const config: HardhatUserConfig = {
       chainId: 11330,
       // private key of `//Alice` from Substrate
       accounts: ["0xe5be9a5092b81bca64be81d212e7f2f9eba183bb7a90954f7b76361f6edb5c0a"],
+    },
+    "cess-testnet": {
+      url: "https://testnet-rpc.cess.network/ws/",
+      chainId: 11330,
+      accounts: [process.env.DEPLOYMENT_SK || ""
+      ],
     }
   }
 };
