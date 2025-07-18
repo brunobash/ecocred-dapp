@@ -4,77 +4,72 @@
 
 **EcoCred** is a decentralized application (DApp) for issuing and querying environmental credits, integrating with the CESS Network blockchain. The project uses Solidity smart contracts deployed on CESS (EVM) and can be easily adapted to store metadata or files using CESS decentralized storage solutions (DeOSS/CDN).
 
-### CESS Integration
+## 1. Problem to Solve
 
-- **Solidity Smart Contract:** The `EcoCred` contract is deployed directly on the CESS EVM network, allowing environmental credits to be registered in a transparent and auditable way.
-- **Ready for Storage:** The `arquivoHashCESS` field allows future integration with CESS DeOSS for decentralized document storage.
+The issuance and tracking of **environmental credits** still face major challenges both in Brazil and globally:
 
----
+- **Lack of transparency** and risk of fraud in carbon credit and sustainability records.
+- **Difficulty in public verification** of sustainable actions by companies and institutions.
+- **Low digitization and traceability** of supporting documents.
+- **High operational costs** for small and medium-sized organizations to implement environmental certification systems.
 
-## Setup Instructions
-
-### Prerequisites
-
-- Node.js v20.x (recommended)
-- pnpm
-- MetaMask account with balance on CESS testnet/local
-- Access to a CESS EVM node (testnet/local)
-
-### Installation
-
-```sh
-git clone https://github.com/your-username/ecocred-dapp.git
-cd ecocred-dapp/hardhat
-pnpm install
-```
-### Configuration
-
-1. **MetaMask Private Key:**  
-   Export your MetaMask private key and add it to the `.env`:
-   ```
-   DEPLOYMENT_SK=0xyour_private_key
-   ```
-
-2. **Network Configuration:**  
-   The `hardhat.config.ts` file is already set up for cess-local an cess-testnet.
-
-### Contract Deployment
-
-```sh
-pnpm hardhat compile
-pnpm hardhat deploy --network cess-testnet
-```
-
-### Tests
-
-```sh
-pnpm hardhat test
-```
+**EcoCred** aims to address these issues by offering a **decentralized**, **transparent**, and **auditable** solution for issuing environmental credits using blockchain and decentralized storage.
 
 ---
 
-## How it works
+## 2. Application Areas
 
-- Users can issue environmenta credits via the EcoCred contract.
-- Each credit stores a description, file hash(CESS), issuer, and timestamp.
-- Functions are available to query credits and indices by issuer.
+- **Environment and Sustainability**
+  - Carbon emissions offset
+  - Reforestation and environmental recovery records
 
----
+- **ESG Governance (Environmental, Social, and Governance)**
+  - Companies needing verifiable environmental actions
 
-## Estrutura do Projeto
+- **Environmental Education**
+  - Student or community projects with digital impact proof
 
-- `contracts/Ecocred.sol` – Contrato inteligente principal.
-- `deploy/01_deploy_ecocred.ts` – Script de deploy automatizado.
-- `test/Ecocred.ts` – Testes automatizados.
-- `hardhat.config.ts` – Configuração de redes e plugins.
+- **Agribusiness and Industry**
+  - Sustainable production chains requiring verifiable records
 
----
-
-## Inovação Técnica
-
-- Direct integration with CESS EVM.
-- Ready for integration with DeOSS for decentralized storage.
-- Modular code, easy to adapt for other environmental scenarios.
+- **Government and NGOs**
+  - Sustainability incentive programs requiring public accountability
 
 ---
 
+## 3. Market Size (Brazil and Global)
+
+- 🌍 **Global Carbon Credit Market**:  
+  > $851 billion in 2022 – projected **+30% CAGR** through 2030  
+  > Source: [World Bank, Ecosystem Marketplace, Allied Market Research]
+
+- 🇧🇷 **Brazil’s Carbon Market**:  
+  > Leading potential in Latin America for carbon credit generation  
+  > Estimated 23 million hectares of viable reforestation
+
+- 👥 **Potential Users**:
+  - **Brazil**: ~3 million active companies (IBGE)
+  - **Worldwide**: Over **300 million SMEs** and organizations with ESG demands
+
+---
+
+## 4. Competing Solutions
+
+| Solution             | Type                 | Blockchain? | Decentralized Storage? | Notes                          |
+|----------------------|----------------------|-------------|-------------------------|-------------------------------|
+| Verra                | Private platform     | ❌          | ❌                      | Global leader, centralized     |
+| Moss.Earth           | Tokenization (BR)    | ✅          | ❌                      | Popular in Brazil, CO2-focused |
+| Toucan Protocol      | Web3 (Polygon)       | ✅          | ❌                      | Depends on off-chain APIs      |
+| EcoCred              | Web3 (CESS-native)   | ✅          | ✅                      | Fully decentralized and open   |
+
+---
+
+## 5. Estimated Cost of the Solution
+
+| Item                                | Estimated Cost                    |
+|-------------------------------------|------------------------------------|
+| CESS Infrastructure (DeOSS)         | Free on testnet / per GB on mainnet |
+| Smart Contract Deployment           | Gas fees (minimal on testnet)      |
+| Wallet Integration (MetaMask)       | Free for end-users                 |
+| Full-stack Development (MVP)        | ~$3,000 to $6,000 (small team)     |
+| Frontend Hosting (optional)         | Free via IPFS or GitHub Pages      |
